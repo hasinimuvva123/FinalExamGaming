@@ -119,7 +119,7 @@ export const getGroqCompletion = async (history: ChatMessage[], newUserInput: st
             },
             body: JSON.stringify({
                 messages: messages,
-                model: "llama3-70b-8192", // Using a reliable Groq model
+                model: "llama-3.3-70b-versatile", // Using a reliable Groq model
                 temperature: 1,
                 max_tokens: 2048,
                 top_p: 1,
