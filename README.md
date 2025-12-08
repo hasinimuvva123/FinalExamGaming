@@ -1,10 +1,12 @@
 ### Gaming & AI
-https://finalexamgaming.vercel.app/
+
 Hi there! 👋 Welcome to **NeuroLoom**.
 
 This project is for the **LLM Game Integration into Gaming**. I wanted to tackle a problem that has bothered me in RPGs for years: **Boring, repetitive dialogue.**
 
 You know the struggle—you ask an NPC a question, and they give you the exact same pre-written line three times in a row? NeuroLoom is my attempt to fix that using Generative AI. It's an educational platform (and a working prototype!) designed to teach how to hook up **Large Language Models (LLMs)** to game engines.
+
+https://finalexamgaming.vercel.app/
 
 ---
 
