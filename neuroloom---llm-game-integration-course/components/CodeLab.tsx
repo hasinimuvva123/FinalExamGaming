@@ -396,9 +396,7 @@ MAX_HISTORY_TURNS=10`
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-500 text-xs font-bold uppercase tracking-wider border border-indigo-100 mb-4">
-          <Layers size={14} /> Module 2.0: Implementation
-        </div>
+
         <h2 className="text-3xl font-bold text-slate-800 font-serif mb-4">Working Implementation</h2>
         <p className="text-slate-500 max-w-2xl mx-auto text-lg">
           Below is the complete <strong>Starter Template</strong> using your codebase.

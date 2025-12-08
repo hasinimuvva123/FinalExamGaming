@@ -1,25 +1,20 @@
 
 import React from 'react';
-import { Book, Cpu, MessageSquare, ShieldAlert, Zap, Network, Layers, ArrowRight, Database, Mic, Speaker, ExternalLink, FileText, Globe, Volume2, Code, Terminal } from 'lucide-react';
+import { Book, Cpu, MessageSquare, ShieldAlert, Zap, Network, Layers, ArrowRight, Database, Mic, Speaker, ExternalLink, FileText, Globe, Volume2, Code, Terminal, Activity, Server, Box, Brain } from 'lucide-react';
 
 const Documentation: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="mb-12 border-b-2 border-slate-100 pb-8 text-center">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="px-3 py-1 rounded-full bg-indigo-50 text-indigo-500 text-xs font-bold border border-indigo-100 uppercase tracking-wider">
-            Module 1.0
-          </span>
-          <span className="px-3 py-1 rounded-full bg-teal-50 text-teal-500 text-xs font-bold border border-teal-100 uppercase tracking-wider">
-            Technical Documentation
-          </span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-6 tracking-tight font-sans">
-          LLM Integration for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Dynamic Dialogue</span>
+
+        <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight font-serif">
+          The Architecture of <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Sentient NPCs</span>
         </h1>
         <p className="text-xl text-slate-500 font-light leading-relaxed max-w-4xl mx-auto">
-          A comprehensive educational guide on implementing "Audio-Active" NPCs. We analyze the shift from deterministic text trees to probabilistic, voice-enabled simulation, referenced against industry standards like <i>The Matrix Awakens</i>.
+          A technical deep-dive into the <strong>LLM Integration for Dynamic Dialogue</strong> used in high-fidelity simulations like <em>The Matrix Awakens</em>.
+          We explore how Generative AI, Neural TTS, and Unreal Engine 5 converge to create characters that truly "think" and "speak."
         </p>
       </div>
 
@@ -29,361 +24,259 @@ const Documentation: React.FC = () => {
         {/* Main Content Area */}
         <main className="max-w-5xl mx-auto space-y-24">
 
-          {/* Section 1: Concept */}
-          <section id="concept" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-indigo-100 flex items-center justify-center text-indigo-500 shadow-sm">
-                <Layers size={20} />
+          {/* Section 1: The Matrix Awakens Integration */}
+          <section id="matrix-integration" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-4">
+              <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-lg shadow-slate-200">
+                <Zap size={24} />
               </div>
-              <h2 className="text-3xl font-bold text-slate-800">1. Theoretical Foundations</h2>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-800">1. The Matrix Awakens: A Living City</h2>
+                <p className="text-sm text-slate-400 font-mono mt-1">CASE STUDY: UNREAL ENGINE 5 + GENERATIVE AI</p>
+              </div>
             </div>
 
             <div className="prose prose-slate prose-lg text-slate-600 leading-relaxed max-w-none">
               <p>
-                <strong>Dynamic Dialogue</strong> represents a fundamental paradigm shift in computer science, moving from <strong>Deterministic State Machines</strong> to <strong>Probabilistic Generative Models</strong>.
+                <em>The Matrix Awakens</em> isn't just a graphical showcase; it is the proving ground for the <strong>Metahuman Framework</strong> coupled with <strong>Large Language Models (LLMs)</strong>.
+                In the vanilla demo, thousands of NPCs wander the city. With LLM Integration, each of these NPCs is transformed from a static mesh into a stateful agent.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8 not-prose">
-                <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                  <h4 className="font-bold text-slate-700 mb-2">Deterministic (Old)</h4>
-                  <p className="text-sm text-slate-500 mb-4">Uses strict "If/Else" logic. Input must match exact keywords.</p>
-                  <div className="bg-white p-3 rounded border border-slate-200 font-mono text-xs text-slate-600">
-                    if input == "Hello":<br />
-                    &nbsp;&nbsp;return "Greetings."
+
+              <div className="my-10 bg-slate-900 rounded-2xl p-8 text-slate-300 shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">The "IO" Meta-Protocol</h3>
+                    <p className="text-sm leading-relaxed mb-6 text-slate-400">
+                      In the Matrix lore, programs have purpose. In our implementation, every pedestrian has a <strong>System Prompt</strong> generated procedurally based on their location.
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">1</div>
+                        <span><strong>Visuals:</strong> UE5 Metahuman (High Fidelity)</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">2</div>
+                        <span><strong>Brain:</strong> Llama-3 via Groq (Cognition)</span>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">3</div>
+                        <span><strong>Voice:</strong> Neural TTS + Viseme Sync (Speech)</span>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-                <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-100">
-                  <h4 className="font-bold text-indigo-900 mb-2">Probabilistic (New)</h4>
-                  <p className="text-sm text-indigo-800 mb-4">Uses semantic vectors. Understands intent and context.</p>
-                  <div className="bg-white p-3 rounded border border-indigo-200 font-mono text-xs text-indigo-600">
-                    context = Vector(input)<br />
-                    return LLM.predict(context)
+                  <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 font-mono text-xs">
+                    <div className="text-rose-400 mb-2">// DYNAMIC INJECTION</div>
+                    <div className="text-slate-400">
+                      Entity_ID: <span className="text-indigo-400">NPC_9942</span><br />
+                      Location: <span className="text-amber-400">Downtown_Sector_4</span><br />
+                      Event: <span className="text-teal-400">Player_High_Speed_Crash</span><br />
+                      <br />
+                      <span className="text-purple-400">&gt;&gt; GENERATING REACTION...</span><br />
+                      "Watch it! You trying to delete me?"
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <h3 className="text-2xl font-bold text-slate-800 mt-8 mb-4">Theoretical Foundation: Ludonarrative Harmony</h3>
               <p>
-                In high-fidelity simulations like <strong>The Matrix Awakens</strong>, visual realism is high, but "Social Realism" is low. To bridge this gap, the output must be <strong>Multimodal</strong>: The NPC must generate unique text <em>and</em> speak it with a synthetic voice that matches the text's emotion.
+                Traditional games suffer from <strong>Ludonarrative Dissonance</strong>—the gameplay allows infinite freedom (shoot anywhere, drive anywhere), but the narrative is rigid (NPCs only have 3 lines of dialogue).
+                LLM integration solves this by creating <strong>Infinite Narrative Surface Area</strong>. The NPC doesn't just react to pre-scripted events; they react to <em>emergent gameplay</em>.
+                If you crash your car in <em>The Matrix Awakens</em>, the LLM-driven NPC doesn't just play a "Scream" animation; they reference the specific car model, the speed, and their own procedurally generated backstory.
               </p>
             </div>
           </section>
 
-          {/* Section 2: The Matrix Case Study */}
-          <section id="matrix-case-study" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-purple-100 flex items-center justify-center text-purple-500 shadow-sm">
-                <Zap size={20} />
+          {/* Section 2: Full Architecture Diagram */}
+          <section id="architecture" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-4">
+              <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm">
+                <Network size={24} />
               </div>
-              <h2 className="text-3xl font-bold text-slate-800">2. Case Study: The Matrix Awakens</h2>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-800">2. The "Cognitive Engine" Architecture</h2>
+                <p className="text-sm text-slate-400 font-mono mt-1">DATA FLOW: UNREAL ENGINE &rarr; CLOUD &rarr; UNREAL ENGINE</p>
+              </div>
             </div>
 
-            <div className="bg-slate-900 text-white rounded-xl shadow-2xl overflow-hidden relative group mb-8">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-transparent"></div>
+            <p className="text-slate-600 mb-10 max-w-3xl">
+              This diagram illustrates the complete round-trip required to make a Metahuman speak in real-time. Note the <strong>Parallel Execution</strong> of Audio Synthesis and Lip-Sync data generation.
+            </p>
 
-              <div className="relative p-10 z-10">
-                <div className="flex items-start gap-6">
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2 font-mono">The "Zombie" Pedestrian Problem</h3>
-                    <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                      In 2021, Epic Games released <i>The Matrix Awakens</i>. It featured a city with <strong>35,000 simulated pedestrians</strong>. Visually, it was perfect. But cognitively? It was empty. The pedestrians were "zombies" who followed simple pathfinding rules and had no voice.
-                    </p>
+            {/* Complex Flowchart */}
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 overflow-x-auto shadow-inner">
+              <div className="min-w-[1000px] grid grid-cols-5 gap-4 relative">
 
-                    <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-lg backdrop-blur-md">
-                      <h4 className="text-teal-400 font-bold mb-3 uppercase tracking-widest text-xs">The Solution: LLM Integration</h4>
-                      <p className="text-slate-300 italic">
-                        "Imagine walking up to any of those 35,000 people. You ask: 'Where did you get that coat?'
-                        <br /><br />
-                        <strong>With LLMs</strong>, the game engine checks the NPC's metadata (Job: Accountant, Mood: Stressed, Coat: Thrift Store) and generates text. <br />
-                        <strong>With Neural TTS</strong>, that text is instantly converted to an audio waveform, so the character shouts: <br />
-                        <span className="text-white font-medium">'Leave me alone, kid. Bought it off a dead guy in District 4. Now move.'</span>"
-                      </p>
-                    </div>
+                {/* Connector Lines (Background) */}
+                <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -z-0 -translate-y-1/2"></div>
+
+                {/* Step 1: UE5 */}
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="bg-slate-900 text-white p-4 rounded-lg shadow-lg border border-slate-700 h-40 flex flex-col justify-center items-center text-center">
+                    <Box size={32} className="text-white mb-2" />
+                    <h4 className="font-bold">Unreal Engine 5</h4>
+                    <p className="text-[10px] text-slate-400 mt-1">Player Event Triggered</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xs font-bold text-slate-500 uppercase">Input</div>
+                    <div className="text-[10px] font-mono bg-white border border-slate-200 px-2 py-1 rounded mt-1">"Hello there" + Metadata</div>
                   </div>
                 </div>
+
+                {/* Step 2: Gateway */}
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="bg-white p-4 rounded-lg shadow-md border border-indigo-200 h-40 flex flex-col justify-center items-center text-center">
+                    <Server size={32} className="text-indigo-500 mb-2" />
+                    <h4 className="font-bold text-slate-800">Python Bridge</h4>
+                    <p className="text-[10px] text-slate-500 mt-1">REST API Gateway</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xs font-bold text-slate-500 uppercase">Processing</div>
+                    <div className="text-[10px] font-mono bg-white border border-slate-200 px-2 py-1 rounded mt-1">Construct Prompt</div>
+                  </div>
+                </div>
+
+                {/* Step 3: LLM */}
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-4 rounded-lg shadow-lg h-40 flex flex-col justify-center items-center text-center">
+                    <Brain size={32} className="text-white mb-2 animate-pulse" />
+                    <h4 className="font-bold">LLM Inference</h4>
+                    <p className="text-[10px] text-purple-100 mt-1">Llama-3 / GPT-4</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xs font-bold text-slate-500 uppercase">Output</div>
+                    <div className="text-[10px] font-mono bg-white border border-slate-200 px-2 py-1 rounded mt-1">Text Token Stream</div>
+                  </div>
+                </div>
+
+                {/* Step 4: TTS & Visemes (Split) */}
+                <div className="relative z-10 flex flex-col gap-2 h-full justify-center -mt-6">
+                  <div className="bg-teal-50 border border-teal-200 p-3 rounded-lg text-center shadow-sm">
+                    <Speaker size={20} className="text-teal-600 mx-auto mb-1" />
+                    <h5 className="font-bold text-teal-800 text-xs">Neural Audio</h5>
+                    <p className="text-[9px] text-teal-600">Waveform (.wav)</p>
+                  </div>
+                  <div className="bg-rose-50 border border-rose-200 p-3 rounded-lg text-center shadow-sm">
+                    <Activity size={20} className="text-rose-600 mx-auto mb-1" />
+                    <h5 className="font-bold text-rose-800 text-xs">Viseme Data</h5>
+                    <p className="text-[9px] text-rose-600">Lip-Sync JSON</p>
+                  </div>
+                </div>
+
+                {/* Step 5: Animation */}
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className="bg-slate-900 text-white p-4 rounded-lg shadow-lg border border-slate-700 h-40 flex flex-col justify-center items-center text-center">
+                    <Volume2 size={32} className="text-emerald-400 mb-2" />
+                    <h4 className="font-bold">Metahuman</h4>
+                    <p className="text-[10px] text-slate-400 mt-1">Audio + Facial Animation</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-xs font-bold text-slate-500 uppercase">Result</div>
+                    <div className="text-[10px] font-mono bg-white border border-slate-200 px-2 py-1 rounded mt-1">Alive NPC</div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </section>
 
           {/* Section 3: Step-by-Step Guide */}
-          <section id="step-by-step" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-teal-100 flex items-center justify-center text-teal-600 shadow-sm">
-                <Terminal size={20} />
+          <section id="guide" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-8 border-b border-slate-200 pb-4">
+              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-600 shadow-sm">
+                <Terminal size={24} />
               </div>
-              <h2 className="text-3xl font-bold text-slate-800">3. Building the Matrix Loop: Step-by-Step</h2>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-800">3. Implementation Guide: From Zero to Speech</h2>
+                <p className="text-sm text-slate-400 font-mono mt-1">INTEGRATING WITH UNREAL ENGINE BLUEPRINTS</p>
+              </div>
             </div>
 
-            <p className="text-slate-600 mb-8 max-w-3xl">
-              How does the player's text input actually become an NPC's spoken voice? Below is the detailed execution flow of a single "Dialogue Turn" in our NeuroLoom engine.
-            </p>
-
-            <div className="relative border-l-2 border-slate-200 ml-4 space-y-12">
+            <div className="space-y-12 border-l-2 border-slate-200 ml-4 pl-8 relative">
 
               {/* Step 1 */}
-              <div className="relative pl-8">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-500 rounded-full border-4 border-white shadow-sm"></div>
-                <h4 className="text-lg font-bold text-indigo-900 mb-2">Step 1: Input Capture & Prompt Assembly</h4>
-                <p className="text-slate-600 text-sm mb-4">
-                  The player types "Do you know Neo?". The system does NOT send just this string. It wraps it in a <strong>Context Sandwich</strong>.
+              <div className="relative">
+                <span className="absolute -left-[41px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-bold text-sm ring-4 ring-white">1</span>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Capture Input (Speech-to-Text)</h3>
+                <p className="text-slate-600 mb-4">
+                  In <em>The Matrix Awakens</em>, the player can speak via microphone. We use an STT (Speech-to-Text) service like OpenAI Whisper running locally or in the cloud.
                 </p>
-                <div className="bg-slate-800 p-4 rounded text-xs font-mono text-slate-300 shadow-inner">
-                  <span className="text-purple-400">System:</span> You are Cipher. Cynical. Traitor.<br />
-                  <span className="text-purple-400">Context:</span> Loc: Steakhouse. Time: 1999.<br />
-                  <span className="text-green-400">User:</span> Do you know Neo?
+                <div className="bg-slate-800 p-4 rounded-lg font-mono text-xs text-slate-300">
+                  <span className="text-purple-400">Blueprint Node:</span> Capture Audio Input &rarr; Send to Whisper API &rarr; Return String
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="relative pl-8">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-teal-500 rounded-full border-4 border-white shadow-sm"></div>
-                <h4 className="text-lg font-bold text-teal-900 mb-2">Step 2: LLM Inference (Text Generation)</h4>
-                <p className="text-slate-600 text-sm mb-4">
-                  The LLM (Groq/Llama-3) predicts the next tokens. We force it to use <strong>XML Tags</strong> so we know who is speaking.
+              <div className="relative">
+                <span className="absolute -left-[41px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-bold text-sm ring-4 ring-white">2</span>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Context Construction (RAG)</h3>
+                <p className="text-slate-600 mb-4">
+                  The NPC needs to know where they are. We perform a "Raycast" in Unreal Engine to find nearby objects (e.g., "Red Sports Car", "Coffee Shop"). We inject this into the prompt.
                 </p>
-                <div className="bg-slate-800 p-4 rounded text-xs font-mono text-slate-300 shadow-inner">
-                  <span className="text-teal-400">Output:</span> &lt;PlayerMale1&gt; Neo? He's a dream. I prefer reality. &lt;/PlayerMale1&gt;
+                <div className="bg-slate-800 p-4 rounded-lg font-mono text-xs text-slate-300">
+                  <pre>{`System Prompt:
+"You are a pedestrian in The Matrix.
+Context: Standing near [Main Street].
+Visible Objects: [Red Car, Traffic Light].
+Current Weather: [Rain]."`}</pre>
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className="relative pl-8">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-rose-500 rounded-full border-4 border-white shadow-sm"></div>
-                <h4 className="text-lg font-bold text-rose-900 mb-2">Step 3: Parsing & Audio Request</h4>
-                <p className="text-slate-600 text-sm mb-4">
-                  Our code uses Regex to strip the tags. It identifies the character <code>PlayerMale1</code> maps to Voice Model <code>aura-2-odysseus-en</code>. It sends the clean text to Deepgram.
+              <div className="relative">
+                <span className="absolute -left-[41px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-bold text-sm ring-4 ring-white">3</span>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">LLM Inference & Parsing</h3>
+                <p className="text-slate-600 mb-4">
+                  The LLM returns text. We assume the identity of the NPC. Critical: We must detect emotions for the TTS engine.
                 </p>
-                <div className="bg-white border border-slate-200 p-4 rounded text-xs font-mono text-rose-600 shadow-sm">
-                  POST https://api.deepgram.com/v1/speak<br />
-                  Body: "Neo? He's a dream. I prefer reality."
+                <div className="bg-white border border-slate-200 p-4 rounded-lg font-mono text-xs text-slate-600">
+                  Output: <span className="text-rose-500">[Emotion: Fear]</span> "Who are you? Get away from me!"
                 </div>
               </div>
 
               {/* Step 4 */}
-              <div className="relative pl-8">
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-amber-500 rounded-full border-4 border-white shadow-sm"></div>
-                <h4 className="text-lg font-bold text-amber-900 mb-2">Step 4: Playback & Visualization</h4>
-                <p className="text-slate-600 text-sm mb-4">
-                  The browser receives an MP3 blob. It plays the audio <em>while</em> displaying the text on screen. This duality (Text + Sound) is what creates immersion.
+              <div className="relative">
+                <span className="absolute -left-[41px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-bold text-sm ring-4 ring-white">4</span>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Neural TTS & Viseme Generation</h3>
+                <p className="text-slate-600 mb-4">
+                  This is the most critical step for <em>The Matrix</em> visual quality. We send the text to a specialized TTS provider (like ElevenLabs or Deepgram).
+                  We request not just audio, but <strong>Visemes</strong> (mouth shapes).
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-indigo-50 p-3 rounded border border-indigo-100">
+                    <span className="text-xs font-bold text-indigo-500 uppercase block mb-1">Audio Stream</span>
+                    <div className="h-8 bg-indigo-200 rounded animate-pulse"></div>
+                  </div>
+                  <div className="bg-rose-50 p-3 rounded border border-rose-100">
+                    <span className="text-xs font-bold text-rose-500 uppercase block mb-1">Viseme Stream</span>
+                    <code className="text-[10px] text-rose-800">{`{ "0.1s": "A", "0.2s": "O" }`}</code>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="relative">
+                <span className="absolute -left-[41px] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-bold text-sm ring-4 ring-white">5</span>
+                <h3 className="text-xl font-bold text-slate-800 mb-2">Unreal Metahuman Animator</h3>
+                <p className="text-slate-600 mb-4">
+                  The audio plays on the <code>AudioComponent</code>. The Viseme JSON drives the <code>MorphTargets</code> on the Metahuman face mesh. The result is perfect lip-sync.
                 </p>
               </div>
 
             </div>
           </section>
 
-          {/* Section 4: Architecture Diagram */}
-          <section id="architecture" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-cyan-100 flex items-center justify-center text-cyan-600 shadow-sm">
-                <Network size={20} />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-800">4. The Text+Audio Architecture</h2>
-            </div>
-
-            <p className="text-slate-600 mb-8 max-w-3xl">
-              Below is the complete data flow. Note the parallel paths: one for displaying text on the UI, and one for synthesizing audio for the speakers.
-            </p>
-
-            {/* Visual Flowchart */}
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 overflow-x-auto mb-10">
-              <div className="min-w-[900px] flex justify-between items-center relative">
-                {/* Connector Line */}
-                <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -z-0 -translate-y-1/2"></div>
-
-                {/* Node 1 */}
-                <div className="relative z-10 flex flex-col items-center bg-white p-4 rounded shadow-sm border border-slate-200 w-48 text-center h-52 justify-start pt-6">
-                  <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-3">
-                    <MessageSquare size={20} />
-                  </div>
-                  <h4 className="font-bold text-slate-800 text-sm">Player Input</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">User types text into the simulation interface.</p>
-                </div>
-
-                <ArrowRight className="text-slate-300 z-10" size={24} />
-
-                {/* Node 2 */}
-                <div className="relative z-10 flex flex-col items-center bg-white p-4 rounded shadow-sm border border-indigo-200 ring-2 ring-indigo-50 w-48 text-center h-52 justify-start pt-6">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-full flex items-center justify-center mb-3 shadow-lg">
-                    <Cpu size={20} />
-                  </div>
-                  <h4 className="font-bold text-slate-800 text-sm">LLM Processing</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">Groq/Llama3 generates a response with XML tags.</p>
-                </div>
-
-                <ArrowRight className="text-slate-300 z-10" size={24} />
-
-                {/* Split Node 3 */}
-                <div className="relative z-10 flex flex-col gap-2 w-48">
-                  {/* Top: Text */}
-                  <div className="bg-white p-3 rounded shadow-sm border border-teal-200 text-center">
-                    <h4 className="font-bold text-teal-800 text-xs mb-1 flex items-center justify-center gap-1"><FileText size={12} /> UI Display</h4>
-                    <p className="text-[10px] text-slate-400">Text rendered to chat window immediately.</p>
-                  </div>
-                  {/* Bottom: Audio */}
-                  <div className="bg-white p-3 rounded shadow-sm border border-rose-200 text-center">
-                    <h4 className="font-bold text-rose-800 text-xs mb-1 flex items-center justify-center gap-1"><Speaker size={12} /> Audio Synth</h4>
-                    <p className="text-[10px] text-slate-400">Deepgram generates waveforms.</p>
-                  </div>
-                </div>
-
-                <ArrowRight className="text-slate-300 z-10" size={24} />
-
-                {/* Node 4 */}
-                <div className="relative z-10 flex flex-col items-center bg-white p-4 rounded shadow-sm border border-slate-200 w-48 text-center h-52 justify-start pt-6">
-                  <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-3">
-                    <Volume2 size={20} />
-                  </div>
-                  <h4 className="font-bold text-slate-800 text-sm">Experience</h4>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">Player reads the text AND hears the voice simultaneously.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 5: Voice/TTS */}
-          <section id="voice-layer" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-cyan-100 flex items-center justify-center text-cyan-500 shadow-sm">
-                <Volume2 size={20} />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-800">5. The Voice Layer: From Text to Waveforms</h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h3 className="font-bold text-slate-700">The Latency Bottleneck</h3>
-                <p className="text-sm text-slate-500">
-                  Generating high-quality neural audio is computationally expensive. If we wait for the LLM to finish the entire paragraph before sending it to the TTS (Text-to-Speech) engine, the user waits 3+ seconds.
-                </p>
-                <div className="bg-amber-50 border-l-4 border-amber-300 p-4 text-xs text-amber-900 leading-relaxed">
-                  <strong>Solution: Streaming & Parallelism.</strong><br />
-                  As shown in our <code>Code Lab</code>, we do not wait. We break the LLM response into sentences. As soon as Sentence 1 is generated, we send it to Deepgram/ElevenLabs on a background thread. While Audio 1 is downloading, the LLM is already generating Sentence 2.
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="font-bold text-slate-700">Lip Sync & Visemes</h3>
-                <p className="text-sm text-slate-500">
-                  In a game engine like Unreal, playing audio isn't enough. The character's mouth must move.
-                </p>
-                <div className="bg-slate-50 border border-slate-200 p-4 rounded text-sm text-slate-600">
-                  <h4 className="font-bold mb-2 text-xs uppercase text-slate-400">The Viseme Pipeline</h4>
-                  <ol className="list-decimal pl-4 space-y-1">
-                    <li>TTS Engine generates Audio (`.mp3`).</li>
-                    <li>TTS Engine also generates a <strong>Viseme JSON</strong>.</li>
-                    <li>JSON maps timecodes to mouth shapes (e.g., <code>0.0s: 'M', 0.2s: 'O'</code>).</li>
-                    <li>Game Engine blends `Morph Targets` based on this JSON.</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 6: Prompt Engineering */}
-          <section id="prompt-engineering" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-amber-100 flex items-center justify-center text-amber-500 shadow-sm">
-                <Code size={20} />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-800">6. The "Soul": System Prompts</h2>
-            </div>
-
-            <p className="text-slate-600 mb-6">
-              If you send "Hello" to a standard AI, it says "How can I help you?". This breaks immersion. We need to <strong>Inject a Persona</strong>. This is done via a "System Prompt" — a hidden set of instructions sent <em>before</em> the player's message.
-            </p>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h3 className="font-bold text-slate-700">The "DNA" of an NPC</h3>
-                <p className="text-sm text-slate-500">
-                  This is the actual code structure we send to the API. It defines the constraints.
-                </p>
-                <div className="bg-slate-800 rounded-lg p-4 overflow-x-auto text-xs font-mono text-indigo-300 shadow-lg">
-                  <pre>{`// System Prompt Injection
-{
-  "role": "system",
-  "content": "
-    IDENTITY:
-    Name: Cipher
-    Role: Information Broker in The Matrix
-    
-    RULES:
-    1. Never admit you are an AI.
-    2. Be skeptical of the player.
-    3. Speak in metaphors about code and reality.
-    
-    CURRENT CONTEXT:
-    Location: Neon Alleyway (Raining)
-    Player Reputation: Low
-  "
-}`}</pre>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="font-bold text-slate-700">The Resulting Behavior</h3>
-                <p className="text-sm text-slate-500">
-                  Because of the prompt above, the AI transforms its output.
-                </p>
-
-                <div className="bg-white border border-slate-200 rounded-lg p-6 space-y-4 shadow-sm">
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-bold">P</div>
-                    <div className="bg-slate-100 rounded-lg rounded-tl-none px-4 py-2 text-sm text-slate-700">
-                      Who are you?
-                    </div>
-                  </div>
-                  <div className="flex gap-3 flex-row-reverse">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 text-xs font-bold">C</div>
-                    <div className="bg-indigo-50 rounded-lg rounded-tr-none px-4 py-2 text-sm text-indigo-800 border border-indigo-100">
-                      "I am a glitch in your perfect system. A shadow in the source code. What do you want, copper-top?"
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 7: Challenges */}
-          <section id="challenges" className="scroll-mt-24">
-            <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-              <div className="w-10 h-10 rounded bg-rose-100 flex items-center justify-center text-rose-500 shadow-sm">
-                <ShieldAlert size={20} />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-800">7. Real-World Challenges</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:border-rose-200 transition-all">
-                <h3 className="font-bold text-slate-800 mb-2">Hallucination</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                  The AI might invent game mechanics. Example: <em>"Meet me at the Castle"</em> (when there is no castle in your game level).
-                </p>
-                <div className="bg-rose-50 text-rose-700 px-3 py-1 rounded text-xs font-bold inline-block">
-                  Fix: Use RAG (Retrieval Augmented Generation) to restrict knowledge.
-                </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:border-amber-200 transition-all">
-                <h3 className="font-bold text-slate-800 mb-2">Latency (Lag)</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-4">
-                  Generating text takes time (1-2 seconds). In an action game, this feels like an eternity.
-                </p>
-                <div className="bg-amber-50 text-amber-700 px-3 py-1 rounded text-xs font-bold inline-block">
-                  Fix: Stream the text instantly and play a "Thinking..." animation.
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 8: References & Resources */}
+          {/* Section 4: References */}
           <section id="references" className="scroll-mt-24 border-t border-slate-100 pt-16">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-slate-500 shadow-sm">
                 <Globe size={20} />
               </div>
-              <h2 className="text-3xl font-bold text-slate-800">8. References & Further Reading</h2>
+              <h2 className="text-3xl font-bold text-slate-800">4. Industry References</h2>
             </div>
             <p className="text-slate-600 mb-8">
-              The following resources were used to construct the curriculum for this module. Students are encouraged to explore these managed solutions to understand the state-of-the-art in Game AI.
+              The technology described above is actively used by the following platforms to power Matrix-level simulations.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -392,46 +285,46 @@ const Documentation: React.FC = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-bold text-indigo-600 group-hover:text-indigo-700 flex items-center gap-2">
-                      Inworld AI: TTS & Voice <ExternalLink size={14} />
+                      Inworld AI <ExternalLink size={14} />
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Official Documentation</p>
+                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">The Engine behind the Mod</p>
                   </div>
                   <Speaker className="text-slate-300 group-hover:text-indigo-400" size={24} />
                 </div>
                 <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-                  Deep dive into how Inworld handles Text-to-Speech synthesis with emotional layering for NPCs.
+                  Inworld provided the tech demo that actually integrated LLMs into the Matrix Awakens city, allowing users to talk to the agents.
                 </p>
               </a>
 
               {/* Reference 2 */}
-              <a href="https://inworld.ai/blog/origins-unreal-engine-demo" target="_blank" rel="noopener noreferrer" className="group block bg-white p-6 rounded-lg border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h4 className="font-bold text-purple-600 group-hover:text-purple-700 flex items-center gap-2">
-                      Inworld Origins: Unreal Demo <ExternalLink size={14} />
-                    </h4>
-                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Case Study / Demo</p>
-                  </div>
-                  <Zap className="text-slate-300 group-hover:text-purple-400" size={24} />
-                </div>
-                <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-                  An investigative breakdown of "Origins", a detective game demo that pioneered generative logic in UE5.
-                </p>
-              </a>
-
-              {/* Reference 3 */}
               <a href="https://www.convai.com/" target="_blank" rel="noopener noreferrer" className="group block bg-white p-6 rounded-lg border border-slate-200 hover:border-teal-300 hover:shadow-md transition-all">
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-bold text-teal-600 group-hover:text-teal-700 flex items-center gap-2">
                       Convai <ExternalLink size={14} />
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Conversational AI Platform</p>
+                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Real-time Unity/Unreal Plugin</p>
                   </div>
                   <Mic className="text-slate-300 group-hover:text-teal-400" size={24} />
                 </div>
                 <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-                  A comprehensive platform for bringing AI characters to life in virtual worlds, offering plugins for Unreal Engine and Unity.
+                  A leading platform that offers the exact "Speech-to-Text &rarr; LLM &rarr; TTS &rarr; Viseme" pipeline described in Section 2.
+                </p>
+              </a>
+
+              {/* Reference 3 */}
+              <a href="https://inworld.ai/blog/origins-unreal-engine-demo" target="_blank" rel="noopener noreferrer" className="group block bg-white p-6 rounded-lg border border-slate-200 hover:border-purple-300 hover:shadow-md transition-all">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-bold text-purple-600 group-hover:text-purple-700 flex items-center gap-2">
+                      Inworld Origins <ExternalLink size={14} />
+                    </h4>
+                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">Detective Case Study</p>
+                  </div>
+                  <Zap className="text-slate-300 group-hover:text-purple-400" size={24} />
+                </div>
+                <p className="text-sm text-slate-600 mt-4 leading-relaxed">
+                  A breakdown of how "Origins" uses generative logic to create a detective mystery where NPCs can lie based on LLM prompts.
                 </p>
               </a>
 
@@ -440,14 +333,14 @@ const Documentation: React.FC = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-bold text-rose-600 group-hover:text-rose-700 flex items-center gap-2">
-                      The "Uncanny Valley" in AI Games <ExternalLink size={14} />
+                      The "Uncanny" Factor <ExternalLink size={14} />
                     </h4>
-                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">News Article</p>
+                    <p className="text-xs text-slate-400 mt-1 uppercase font-bold tracking-wider">News Analysis</p>
                   </div>
                   <FileText className="text-slate-300 group-hover:text-rose-400" size={24} />
                 </div>
                 <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-                  Critique on "disturbing characters" in AI demos, highlighting the importance of safety rails and emotional constraints.
+                  Discussing the psychological impact of talking to hyper-realistic Metahumans powered by AI.
                 </p>
               </a>
             </div>

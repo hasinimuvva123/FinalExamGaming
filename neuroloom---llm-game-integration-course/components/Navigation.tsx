@@ -8,10 +8,10 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ currentView, setCurrentView }) => {
-  
+
   const navItems = [
     { id: View.HOME, label: 'Mission', icon: Layout },
-    { id: View.TUTORIAL_VIDEO, label: 'Briefing', icon: Play },
+    { id: View.TUTORIAL_VIDEO, label: 'Tutorial', icon: Play },
     { id: View.DOCUMENTATION, label: 'Docs', icon: BookOpen },
     { id: View.CODE_LAB, label: 'Blueprints', icon: Code },
     { id: View.LIVE_DEMO, label: 'Simulation', icon: Terminal },
@@ -29,7 +29,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setCurrentView }) 
             </div>
             <span className="text-slate-700 font-bold tracking-tight text-lg hidden sm:block">Neuro<span className="text-indigo-400">Loom</span></span>
           </div>
-          
+
           <div className="flex space-x-1 overflow-x-auto no-scrollbar py-2">
             {navItems.map((item) => {
               const isActive = currentView === item.id;
@@ -39,8 +39,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setCurrentView }) 
                   key={item.id}
                   onClick={() => setCurrentView(item.id)}
                   className={`flex items-center px-3 py-2 rounded text-sm font-medium transition-all duration-200 whitespace-nowrap border
-                    ${isActive 
-                      ? 'bg-indigo-50 border-indigo-100 text-indigo-500 shadow-sm' 
+                    ${isActive
+                      ? 'bg-indigo-50 border-indigo-100 text-indigo-500 shadow-sm'
                       : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50'
                     }`}
                 >

@@ -141,6 +141,11 @@ export const getGroqCompletion = async (history: ChatMessage[], newUserInput: st
 };
 
 export const fetchDeepgramAudio = async (text: string, model: string): Promise<string | null> => {
+    if (!DEEPGRAM_API_KEY) {
+        console.error("Deepgram API Key is missing!");
+        return null;
+    }
+
     try {
         const url = `https://api.deepgram.com/v1/speak?model=${model}`;
         const response = await fetch(url, {
@@ -153,14 +158,15 @@ export const fetchDeepgramAudio = async (text: string, model: string): Promise<s
         });
 
         if (!response.ok) {
-            console.error(`Deepgram Error for '${text}':`, await response.text());
-            return null;
+            const errText = await response.text();
+            console.error(`Deepgram Error for '${text}':`, errText);
+            throw new Error(`Deepgram API ${response.status}: ${errText}`);
         }
 
         const blob = await response.blob();
         return URL.createObjectURL(blob);
     } catch (error) {
         console.error("Audio Fetch Error:", error);
-        return null;
+        throw error; // Re-throw to be caught by InteractiveDemo logs
     }
 };

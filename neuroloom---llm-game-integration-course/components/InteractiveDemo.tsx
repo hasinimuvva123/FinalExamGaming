@@ -14,6 +14,19 @@ const InteractiveDemo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const consoleEndRef = useRef<HTMLDivElement>(null);
+
+  // Debug Logging State
+  const [debugLogs, setDebugLogs] = useState<{ message: string, type: 'info' | 'error', timestamp: number }[]>([]);
+
+  const log = (message: string, type: 'info' | 'error' = 'info') => {
+    console.log(`[${type.toUpperCase()}] ${message}`); // Keep console log for safety
+    setDebugLogs(prev => [...prev, { message, type, timestamp: Date.now() }]);
+  };
+
+  useEffect(() => {
+    consoleEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [debugLogs]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +55,11 @@ const InteractiveDemo: React.FC = () => {
       audioRef.current.src = nextAudioUrl;
     }
 
-    audioRef.current.play().catch(e => console.error("Playback failed:", e));
+    log(`Playing audio clip: ${nextAudioUrl.substring(0, 30)}...`);
+    audioRef.current.play().catch(e => {
+      console.error("Playback failed:", e);
+      log(`Playback failed: ${e.message}`, 'error');
+    });
 
     audioRef.current.onended = () => {
       setIsPlaying(false);
@@ -59,44 +76,50 @@ const InteractiveDemo: React.FC = () => {
     setLoading(true);
 
     try {
+      log(`Sending message to Groq: "${input}"`);
+
       // 1. Get Text Response from Groq
       const history = messages.map(m => ({ role: m.role, text: m.text }));
       const responseText = await getGroqCompletion(history, input);
+      log(`Groq response received (${responseText.length} chars)`);
 
       const botMsg: ChatMessage = { role: 'model', text: responseText, timestamp: Date.now() };
       setMessages(prev => [...prev, botMsg]);
 
       // 2. Parse and Fetch Audio
       const parsed = parseDialogues(responseText);
+      log(`Parsed ${parsed.length} dialogue segments`);
+
       const newAudioUrls: string[] = [];
 
-      // Fetch all audios (sequentially or parallel - parallel is faster)
-      await Promise.all(parsed.map(async (p) => {
-        const url = await fetchDeepgramAudio(p.text, p.model);
-        if (url) {
-          // We need to maintain order, so we can't just push results as they arrive
-          // But for simplicity in this demo, let's assume we want them in order of text appearance.
-          // This Promise.all doesn't guarantee order in the array without careful mapping.
-        }
-      }));
+      // Fetch audios 
+      for (const [idx, p] of parsed.entries()) {
+        log(`[${idx + 1}/${parsed.length}] Fetching audio for ${p.character} (${p.model})...`);
 
-      // Re-doing fetch to ensure order
-      for (const p of parsed) {
         const url = await fetchDeepgramAudio(p.text, p.model);
+
         if (url) {
+          log(`[${idx + 1}] Audio fetched successfully.`);
           newAudioUrls.push(url);
+        } else {
+          log(`[${idx + 1}] Audio fetch FAILED for text: "${p.text.substring(0, 20)}..."`, 'error');
         }
       }
 
       if (newAudioUrls.length > 0) {
+        log(`Queuing ${newAudioUrls.length} audio clips for playback.`);
         setAudioQueue(prev => [...prev, ...newAudioUrls]);
+      } else {
+        log("No audio URLs were generated.", 'error');
       }
 
     } catch (error) {
-      console.error("Simulation Error:", error);
+      const errMsg = error instanceof Error ? error.message : 'Unknown error';
+      log(`Critical Error: ${errMsg}`, 'error');
+
       setMessages(prev => [...prev, {
         role: 'model',
-        text: `<System> Error connecting to simulation: ${error instanceof Error ? error.message : 'Unknown error'} </System>`,
+        text: `<System> Error connecting to simulation: ${errMsg} </System>`,
         timestamp: Date.now()
       }]);
     } finally {
@@ -234,6 +257,31 @@ const InteractiveDemo: React.FC = () => {
           <div className="mt-3 text-center">
             <p className="text-[10px] text-slate-300 uppercase tracking-widest font-semibold">Groq AI • Deepgram TTS</p>
           </div>
+        </div>
+      </div>
+
+      {/* Debug Console */}
+      <div className="max-w-4xl w-full mt-4 bg-slate-900 rounded shadow-inner p-4 font-mono text-xs text-green-400 h-40 overflow-y-auto border border-slate-700">
+        <div className="flex justify-between items-center mb-2 border-b border-slate-800 pb-1">
+          <span className="font-bold text-slate-500 uppercase tracking-wider">System Logs</span>
+          <button
+            onClick={() => setDebugLogs([])}
+            className="text-slate-600 hover:text-slate-400 transition-colors"
+          >
+            Clear
+          </button>
+        </div>
+        <div className="space-y-1">
+          {debugLogs.length === 0 && <span className="text-slate-600 italic">No logs yet...</span>}
+          {debugLogs.map((log, i) => (
+            <div key={i} className="break-all border-b border-slate-800/50 pb-0.5 mb-0.5">
+              <span className="text-slate-500 mr-2">[{new Date(log.timestamp).toLocaleTimeString()}]</span>
+              <span className={log.type === 'error' ? 'text-red-400' : 'text-green-400'}>
+                {log.message}
+              </span>
+            </div>
+          ))}
+          <div ref={consoleEndRef} />
         </div>
       </div>
     </div>
