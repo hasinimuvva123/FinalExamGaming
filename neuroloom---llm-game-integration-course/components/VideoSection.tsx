@@ -9,15 +9,14 @@ const VideoSection: React.FC = () => {
       </div>
 
       <div className="bg-black rounded-lg overflow-hidden border border-slate-200 shadow-xl shadow-indigo-100/50 aspect-video relative group">
-        <video
-          className="w-full h-full object-cover"
-          controls
-          title="Tutorial Video"
-        >
-          <source src="/LLM_MatrixAwakens_Tutorial.mov" type="video/mp4" />
-          <source src="/LLM_MatrixAwakens_Tutorial.mov" type="video/quicktime" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className="w-full h-full"
+          src="https://www.youtube.com/embed/j8cNEDGyTP4"
+          title="NeuroLoom Tutorial"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
       </div>
 
 
